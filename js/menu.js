@@ -22,6 +22,12 @@ const slideMenu = ({openBtn, menu, classActiveMenu, closeTrigger}) => {
     });
   });
 
+  document.addEventListener('click', e => {
+    if(!e.target.closest(menu) && !e.target.closest(openBtn)) {
+      closeMenu(navigation, classActiveMenu);
+    }
+  })
+
 }
 
 export default slideMenu;
